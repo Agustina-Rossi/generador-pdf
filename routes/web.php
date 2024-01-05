@@ -16,3 +16,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+use App\Http\Controllers\PdfController;
+
+Route::get('/pdf', [PdfController::class, 'index']);
+Route::post('/pdf/buscar', [PdfController::class, 'buscar'])->name('buscar');
